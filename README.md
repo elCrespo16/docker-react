@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React App - Práctica con Docker y Kubernetes
 
-## Available Scripts
+Este repositorio contiene una aplicación sencilla de **React**, diseñada específicamente como material de práctica para el curso de Udemy:
+**[Docker and Kubernetes: The Complete Guide](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/)**, impartido por **Stephen Grider**.
 
-In the project directory, you can run:
+## 📚 Sobre el curso
 
-### `npm start`
+Este curso enseña cómo construir, empaquetar y desplegar aplicaciones modernas utilizando Docker y Kubernetes. A lo largo del curso, se crean distintas aplicaciones (principalmente en React y Node.js) que luego se dockerizan y se despliegan en distintos entornos, incluyendo clusters de Kubernetes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Objetivo del repositorio
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Este proyecto tiene como objetivo servir de base para:
 
-### `npm test`
+- Aprender a crear imágenes Docker a partir de una app React.
+- Usar `docker-compose` para gestionar múltiples servicios (si aplica).
+- Implementar despliegues en Kubernetes.
+- Entender cómo manejar rutas, volúmenes, servicios y pods.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tecnologías utilizadas
 
-### `npm run build`
+- **React** (frontend)
+- **Docker**
+- **Docker Compose**
+- **Kubernetes (kubectl, minikube, etc.)**
+- (Opcionalmente) **Node.js**, si se agrega un backend en fases posteriores.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Estructura del proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+/react-app         # Código fuente de la aplicación React
+/Dockerfile        # Instrucciones para construir la imagen Docker de React
+/docker-compose.yml (opcional)
+/k8s               # Archivos de configuración de Kubernetes (si aplica)
+/README.md         # Este archivo
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚙️ Cómo usar este repositorio
 
-### `npm run eject`
+### 1. Clonar el repositorio
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/tu-usuario/tu-repo.git
+cd tu-repo
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Instalar dependencias
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+cd react-app
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Ejecutar en desarrollo (sin Docker)
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 4. Construir y correr con Docker
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+docker build -t react-app .
+docker run -p 3000:3000 react-app
+```
 
-### Code Splitting
+### 5. Usar docker-compose (si has configurado uno)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+docker-compose up
+```
 
-### Analyzing the Bundle Size
+### 6. Desplegar en Kubernetes (si has creado los manifiestos)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+kubectl apply -f k8s/
+```
 
-### Making a Progressive Web App
+> Nota: Asegúrate de tener un cluster corriendo (como minikube) antes de aplicar configuraciones de Kubernetes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ✅ Estado del proyecto
 
-### Advanced Configuration
+Este proyecto está en curso y se irá actualizando según avance en el curso. La idea es que cada etapa (Docker, docker-compose, Kubernetes) se refleje en diferentes ramas o commits del repositorio.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## ✍️ Autor
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este proyecto fue creado como parte del aprendizaje personal del curso de Docker y Kubernetes.
+Si tienes sugerencias, mejoras o quieres colaborar, ¡bienvenido!
