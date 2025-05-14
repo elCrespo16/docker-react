@@ -12,6 +12,8 @@ RUN npm run build
 
 FROM nginx
 
+EXPOSE 80
+
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # NGINX base image already has the start command embeded
