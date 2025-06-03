@@ -41,7 +41,7 @@ Este proyecto tiene como objetivo servir de base para:
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/tu-repo.git
+git clone git@github.com:elCrespo16/docker-react.git
 cd tu-repo
 ```
 
