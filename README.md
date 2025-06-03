@@ -29,10 +29,10 @@ Este proyecto tiene como objetivo servir de base para:
 ## 📦 Estructura del proyecto
 
 ```
-/react-app         # Código fuente de la aplicación React
-/Dockerfile        # Instrucciones para construir la imagen Docker de React
-/docker-compose.yml (opcional)
-/k8s               # Archivos de configuración de Kubernetes (si aplica)
+/complex-k8s       # Codigo fuente de configuracion de Kubernetes para una app compleja
+/react-frontend-app # Codigo para una app sencilla usando docker y docker compose
+/complex           # Codigo de una app compleja usando docker y docker compose
+/simplek8s         # Archivos de configuración de Kubernetes para un miniproyecto de Kubernetes
 /README.md         # Este archivo
 ```
 
